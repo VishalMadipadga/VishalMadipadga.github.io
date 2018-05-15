@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Rubik's Cube Timer</title>
+<style>
+img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+
+
+}
+
+
+</style>
+</head>
+<body>	
+	
+<img src= "rubiks-cube-coloured.png" alt = "Rubik's Cube" style="width:50%;" height = "100" width = "100">
+<p align = "center"> <font size="50"><b>WCA Offical Timer</b> </font></p>
+
+
+<div style="text-align:center;">
+    <button onclick="generateScramble()">Generate Scramble </button>
+</div>
+<script>
+function generateScramble()
+{
+
+var instructions = ["U", "U2", "U’", "D", "D2", "D’", "R", "R2", "R’", "L", "L2", "L’", "F", "F2", "F’", "B", "B2", "B’"];
+var scramble = new Array(21);
+ var instructionIndex; 
+   for (var i =0; i < 21; i++)
+   {
+   instructionIndex = faceGenerator();
+   instructionIndex = instructionIndex*3;
+   var generate = Math.random()*(2-0)+0;
+   var generateTrunc = generate | 0;
+   instructionIndex +=generateTrunc; 
+   scramble[i] = instructions[instructionIndex];
+   }
+   
+   printScramble(scramble);
+   
+}
+
+
+function faceGenerator()
+{
+  var number =  Math.random()* (5-0)+0;
+  var truncated = number|0;
+  return truncated;
+
+}
+function printScramble(scramble)
+{
+ for (var i =0; i < 21; i++)
+   {
+     
+   document.writeln(scramble[i]);
+   
+   }
+
+}
+
+
+	
+</script>
+	
+		
+</body>
+
+</html>
