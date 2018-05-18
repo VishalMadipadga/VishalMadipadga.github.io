@@ -7,8 +7,6 @@ img{
    display: block;
    margin-left: auto;
    margin-right: auto;
-
-
 }
 
 
@@ -20,9 +18,17 @@ img{
 <p align = "center"> <font size="50"><b>WCA Offical Timer</b> </font></p>
 <p id = "display" align = "center"></p>
 
+<div style="text-align:center;">
+<h1 id = "timer"> 00:00.00 </h1>
+<button id = "start"> Start</button>
+<button id = "stop"> Stop </button> 
+</div>
+
+<p align = "center" >" "   </p>
+
 
 <div style="text-align:center;">
-    <button onclick="generateScramble()">Generate Scramble </button>
+<button onclick="generateScramble()">Generate Scramble </button>
 </div>
 <script>
 function generateScramble()
@@ -70,7 +76,6 @@ function printScramble(scramble)
    document.getElementById("display").innerHTML = out;
 
 }
-
 
 	
 </script>
