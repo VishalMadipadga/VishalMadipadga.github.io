@@ -9,11 +9,13 @@ start.addEventListener("click", function()
 	if(rubiksTimer.isOn)
 	{
 		rubiksTimer.stop();
+		start.textContent = "Start";
 		
 	}
 	else
 	{
 		rubiksTimer.start();
+		start.textContent = "Stop";
 	}
 });
 

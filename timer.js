@@ -7,9 +7,13 @@ function timer(elem)
 	
 	function update()
 	{
+		if(this.isOn)
+		{
 		time += change();
+		}
 		var format = timeFormatter(time);
 		elem.textContent = format;
+		
 	}
 	
 	function change()
@@ -52,7 +56,7 @@ function timer(elem)
 	{
 		if(!this.isOn)
 		{
-			interval = setInterval(update, 10);
+			interval = setInterval(update.bind(this), 10);
 			offset = Date.now();
 			this.isOn = true;
 		}
@@ -74,6 +78,7 @@ function timer(elem)
 	this.reset = function()
 	{
 		time = 0;
+		update();
 	};
 }
 
